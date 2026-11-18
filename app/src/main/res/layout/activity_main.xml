@@ -69,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="WELCOME ME"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/Yellow"
         android:textSize="22dp" />
 
     <TextView

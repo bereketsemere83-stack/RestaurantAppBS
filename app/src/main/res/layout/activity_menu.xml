@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -14,9 +15,8 @@
         android:gravity="center"
         android:text="HABESHAN FOOD MENU"
         android:textSize="30dp"
-        android:padding="20dp"
         android:textColor="@color/orange"
-        android:textStyle="italic" />
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
@@ -25,45 +25,158 @@
         android:padding="5dp"
         android:text="Tibs - $15"
         android:textColor="@color/teal_200"
-        android:textSize="22sp"
+        android:textSize="20dp"
         android:textStyle="italic" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Shiro - $12"
-        android:textColor="@color/teal_200"
-        android:textStyle="italic"
-        android:textSize="22sp" />
+        android:text="Quantity"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
+        android:textSize="25dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/minusBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/quantityTV"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="25sp"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/plusBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+" />
+
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Sambusa - $4"
-        android:textColor="@color/teal_200"
-        android:textStyle="italic"
-        android:textSize="22sp" />
+        android:text="Size"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
 
-    <TextView
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RadioButton
+        android:id="@+id/rgularRB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Injera - $5"
-        android:textSize="22sp"
-        android:textColor="@color/teal_200"
-        android:textStyle="italic"/>
+        android:text="Regular"
+        android:checked="true" />
 
-    <Button
+        <RadioButton
+            android:id="@+id/largeRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Large + 3$"/>
+
+
+    </RadioGroup>
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Extra"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+
+
+        <RadioButton
+            android:id="@+id/noextraRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No Extra"
+            android:checked="true" />
+
+
+        <RadioButton
+            android:id="@+id/extraRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Extra meat + 4$"/>
+
+        <RadioButton
+            android:id="@+id/injeraRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Extra Injera + 2$" />
+
+
+
+        <Button
+            android:id="@+id/addCardBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ADD To Card"
+            android:textColor="@color/blue"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/subtotalTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Subtotal: 0.00"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/taxTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Tax: 0.00"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/totalTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Total: 0.00"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+
+        <Button
         android:id="@+id/backBTN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="BACK TO HOME"
-        android:textSize="22sp"
-        android:textColor="@color/green"/>
-
-</LinearLayout>
+        android:textColor="@color/green"
+        android:textSize="20dp" />
 
 
 
