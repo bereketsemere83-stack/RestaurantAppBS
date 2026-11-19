@@ -80,10 +80,10 @@
         android:layout_height="wrap_content">
 
     <RadioButton
-        android:id="@+id/rgularRB"
+        android:id="@+id/regularRB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Regular"
+        android:text =" Regular "
         android:checked="true" />
 
         <RadioButton
@@ -98,7 +98,7 @@
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -111,7 +111,7 @@
 
 
         <RadioButton
-            android:id="@+id/noextraRB"
+            android:id="@+id/noExtraRB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="No Extra"
@@ -119,13 +119,13 @@
 
 
         <RadioButton
-            android:id="@+id/extraRB"
+            android:id="@+id/extraMeatRB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Extra meat + 4$"/>
 
         <RadioButton
-            android:id="@+id/injeraRB"
+            android:id="@+id/extraInjeraRB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Extra Injera + 2$" />
@@ -178,7 +178,7 @@
         android:textColor="@color/green"
         android:textSize="20dp" />
 
-
+</LinearLayout>
 
 
 
