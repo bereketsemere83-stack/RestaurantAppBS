@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     android:padding="0dp">
 
     <TextView
@@ -14,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:padding="10dp"
         android:text="HABESHAN FOOD"
-        android:textSize="30sp"
-        android:textStyle="italic"
         android:textColor="@color/black"
-        android:padding="10dp"/>
+        android:textSize="30sp"
+        android:textStyle="italic" />
 
 
     <ImageView
@@ -32,16 +31,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:padding="10dp"
         android:text="Eritrean and Ethiopian Food"
-        android:textSize="24sp"
-        android:padding="10dp"/>
+        android:textSize="24sp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="123 Main Street, Baltimore, MD"
-        android:textSize="18sp" />
+
 
     <TextView
         android:layout_width="match_parent"
@@ -80,12 +74,23 @@
         android:text=""
         android:textSize="20sp" />
 
+
+    <TextView
+        android:id="@+id/addressTV"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:gravity="center"
+        android:text="Addis Ethiopian Restaurant 316 Park Ave, Baltimore, MD 21201"
+        android:textColor="@color/blue"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/menuBTN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="VIEW MENU"
-        android:textColor="@color/red"
+        android:textColor="@color/orange"
         android:textSize="22sp" />
 
 </LinearLayout>

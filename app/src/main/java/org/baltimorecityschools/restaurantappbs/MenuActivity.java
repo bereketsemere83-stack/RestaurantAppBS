@@ -1,17 +1,21 @@
 package org.baltimorecityschools.restaurantappbs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.content.Intent;
+import android.net.Uri;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MenuActivity extends AppCompatActivity {
 
     // 1. Declare variables
-    Button minusBTN, plusBTN, addCartBTN, backBTN;
+    Button minusBTN, plusBTN, addCartBTN, submitOrderBTN, backBTN;
 
     TextView quantityTV;
     TextView subtotalTV, taxTV, totalTV;
@@ -48,6 +52,7 @@ public class MenuActivity extends AppCompatActivity {
         noExtraRB = (RadioButton) findViewById(R.id.noExtraRB);
         extraMeatRB = (RadioButton) findViewById(R.id.extraMeatRB);
         extraInjeraRB = (RadioButton) findViewById(R.id.extraInjeraRB);
+        submitOrderBTN = (Button) findViewById(R.id.submitOrderBTN);
 
         // Create Tibs object
         tibs = new Tibs("Tibs", "Regular", "No Extra", 1, 15.00);
@@ -86,6 +91,7 @@ public class MenuActivity extends AppCompatActivity {
         addCartBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Start with base price of Tibs
                 double itemPrice = tibs.getBasePrice();
 
@@ -100,12 +106,10 @@ public class MenuActivity extends AppCompatActivity {
 
 
                 // EXTRA
-                if (extraMeatRB.isChecked()) {
-                    tibs.setExtra("Extra Meat");
+                if (extraMeatRB.isChecked()) {tibs.setExtra("Extra Meat");
                     itemPrice = itemPrice + 4.00;
                 }
-                else if (extraInjeraRB.isChecked()) {
-                    tibs.setExtra("Extra Injera");
+                else if (extraInjeraRB.isChecked()) {tibs.setExtra("Extra Injera");
                     itemPrice = itemPrice + 2.00;
                 }
                 else {
@@ -122,15 +126,32 @@ public class MenuActivity extends AppCompatActivity {
                 total = subtotal + tax;
 
                 // DISPLAY RESULTS
-                subtotalTV.setText(
-                        "Subtotal: $" + String.format("%.2f", subtotal)
-                );
-                taxTV.setText(
-                        "Tax: $" + String.format("%.2f", tax)
-                );
-                totalTV.setText(
-                        "Total: $" + String.format("%.2f", total)
-                );
+                subtotalTV.setText("Subtotal: $" + String.format("%.2f", subtotal));
+                taxTV.setText("Tax: $" + String.format("%.2f", tax));
+                totalTV.setText("Total: $" + String.format("%.2f", total));
+            }
+        });
+
+
+        submitOrderBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String subject = "Habeshan Food Order";
+
+                String body = "Food: " + tibs.getName()
+                                + "\nSize: " + tibs.getSize()
+                                + "\nExtra: " + tibs.getExtra()
+                                + "\nQuantity: " + tibs.getQuantity()
+                                + "\nSubtotal: $" + String.format("%.2f", subtotal)
+                                + "\nTax: $" + String.format("%.2f", tax)
+                                + "\nTotal: $" + String.format("%.2f", total);
+
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:"));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+                emailIntent.putExtra(Intent.EXTRA_TEXT, body);
+                startActivity(emailIntent);
             }
         });
 
@@ -138,8 +159,6 @@ public class MenuActivity extends AppCompatActivity {
         backBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 finish();
             }
         });
